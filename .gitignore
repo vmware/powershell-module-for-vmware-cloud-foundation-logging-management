@@ -1,0 +1,4 @@
+# MacOS
+## Ignore desktop services files.
+**/.DS_Store
+.site
