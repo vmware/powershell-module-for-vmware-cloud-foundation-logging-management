@@ -4,7 +4,7 @@
 
 # PowerShell Module for VMware Cloud Foundation Logging Management
 
-[:material-powershell: &nbsp; PowerShell Gallery][psgallery-module-password-management]{ .md-button .md-button--primary }
+[:material-powershell: &nbsp; PowerShell Gallery][psgallery-module-logging-management]{ .md-button .md-button--primary }
 
 `VMware.CloudFoundation.LoggingManagement` is a PowerShell module that supports the ability to generate  HTML logging configuration report and manage logging configurations across your [VMware Cloud Foundatiоn][docs-vmware-cloud-foundation] instance.
 
@@ -78,7 +78,7 @@ PowerShell Module                                    | Version   | Publisher | R
 [microsoft-powershell]: https://docs.microsoft.com/en-us/powershell
 [psgallery-module-powercli]: https://www.powershellgallery.com/packages/VMware.PowerCLI
 [psgallery-module-powervcf]: https://www.powershellgallery.com/packages/PowerVCF
-[psgallery-module-password-management]: https://www.powershellgallery.com/packages/VMware.CloudFoundation.LoggingManagement
+[psgallery-module-logging-management]: https://www.powershellgallery.com/packages/VMware.CloudFoundation.LoggingManagement
 [psgallery-module-pvs]: https://www.powershellgallery.com/packages/PowerValidatedSolutions
 [psgallery-module-ssoadmin]: https://www.powershellgallery.com/packages/VMware.vSphere.SsoAdmin
 [developer-module-powercli]: https://developer.vmware.com/tool/vmware-powercli

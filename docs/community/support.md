@@ -14,7 +14,7 @@
 
 :octicons-comment-discussion-24: &nbsp; You can also start a discussion on the GitHub [discussions][discussions] area to ask questions or share ideas.
 
-[issues]: https://github.com/vmware/powershell-module-for-vmware-cloud-foundation-password-management/issues
-[issues-search]: https://github.com/vmware/powershell-module-for-vmware-cloud-foundation-password-management/issues?q=is%3Aissue+is%3Aopen+label%3Abug
-[discussions]: https://github.com/vmware/powershell-module-for-vmware-cloud-foundation-password-management/discussions
+[issues]: https://github.com/vmware/powershell-module-for-vmware-cloud-foundation-logging-management/issues
+[issues-search]: https://github.com/vmware/powershell-module-for-vmware-cloud-foundation-logging-management/issues?q=is%3Aissue+is%3Aopen+label%3Abug
+[discussions]: https://github.com/vmware/powershell-module-for-vmware-cloud-foundation-logging-management/discussions
 [reactions]: https://github.blog/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/
