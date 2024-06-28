@@ -1,16 +1,14 @@
-# Copyright 2024 Broadcom, Inc.
+# Copyright 2024 Broadcom. All Rights Reserved.
+# SPDX-License-Identifier: BSD-2
+
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
 # WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 # COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
 # OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-# Note:
-# This PowerShell module should be considered entirely experimental. It is still in development and not tested beyond lab
-# scenarios. It is recommended you don't use it for any production environment without testing extensively!
-
-# Allow communication with self-signed certificates when using Powershell Core. If you require all communications to be
-# secure and do not wish to allow communication with self-signed certificates, remove lines 15-36 before importing the
-# module.
+# Enable communication with self-signed certificates when using Powershell Core. If you require all communications
+# to be secure and do not wish to allow communication with self-signed certificates, remove lines 19-39 before
+# importing the module.
 
 if ($PSEdition -eq 'Core') {
     $PSDefaultParameterValues.Add("Invoke-RestMethod:SkipCertificateCheck", $true)
@@ -22,6 +20,7 @@ if ($PSEdition -eq 'Desktop') {
     # Allow communication with self-signed certificates when using Windows PowerShell
     [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12;
     Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:$false | Out-Null
+
 
     if ("TrustAllCertificatePolicy" -as [type]) {} else {
         Add-Type @"
@@ -41,7 +40,8 @@ if ($PSEdition -eq 'Desktop') {
 }
 
 ##########################################################################
-#BeginRegion     Non Exported Functions                             ######
+#Region     Begin Non-exported Functions                            ######
+
 Function Get-Password {
     param (
         [string]$username,
@@ -55,12 +55,11 @@ Function Get-Password {
     return $password
 }
 
-#EndRegion  Non Exported Functions                                  ######
+#EndRegion  End Non-exported Functions                              ######
 ##########################################################################
 
-
 ##########################################################################
-#BeginRegion      Global Variables                                  ######
+#Region     Begin Global Variables                                  ######
 
 Set-Variable -Name "successStatus" -Value "SUCCESSFUL" -Scope Global
 Set-Variable -Name "failureStatus" -Value "FAILED" -Scope Global
@@ -78,12 +77,10 @@ $global:cfapiProtocols = @("http", "https")
 #EndRegion  End Global Variables                                    ######
 ##########################################################################
 
-
-
 ##########################################################################
-#Begin Region Invoke Functions               #############################
+#Region     Begin Invoke Functions                                  ######
 
-function Invoke-LoggingConfigReport {
+Function Invoke-LoggingConfigReport {
     <#
         .SYNOPSIS
         Generates an logging configuration report for a workload domain or all workload domains.
@@ -220,11 +217,13 @@ function Invoke-LoggingConfigReport {
 }
 Export-ModuleMember -Function Invoke-LoggingConfigReport
 
-#End Region Invoke Functions               #############################
+#EndRegion  End Invoke Functions                                    ######
+##########################################################################
 
-#Begin Region Publish Functions               #############################
+##########################################################################
+#Region     Begin Publish Functions                                 ######
 
-function Publish-EsxiLoggingConfig {
+Function Publish-EsxiLoggingConfig {
     <#
         .SYNOPSIS
         Publishes the logging configuration for ESXi hosts.
@@ -332,7 +331,7 @@ function Publish-EsxiLoggingConfig {
 
 Export-ModuleMember -Function Publish-EsxiLoggingConfig
 
-function Publish-VcenterLoggingConfig {
+Function Publish-VcenterLoggingConfig {
 
     <#
         .SYNOPSIS
@@ -420,11 +419,9 @@ function Publish-VcenterLoggingConfig {
         }
     }
 }
-
 Export-ModuleMember -Function Publish-VcenterLoggingConfig
 
-function Publish-SddcManagerLoggingConfig {
-
+Function Publish-SddcManagerLoggingConfig {
     <#
         .SYNOPSIS
         Publishes the logging configuration for SDDC Manager.
@@ -499,7 +496,7 @@ function Publish-SddcManagerLoggingConfig {
 }
 Export-ModuleMember -Function Publish-SddcManagerLoggingConfig
 
-function Publish-NsxLoggingConfig {
+Function Publish-NsxLoggingConfig {
     <#
         .SYNOPSIS
         Publishes the logging configuration for NSX Managers and NSX Edges.
@@ -511,7 +508,7 @@ function Publish-NsxLoggingConfig {
         Publish-NsxLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -alldomains
         This example returns the logging configuration of the all the NSX Managers and NSX Edge Nodes in your VCF environment.
 
-          .EXAMPLE
+        .EXAMPLE
         Publish-NsxLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -workoadDomain sfo-m01
         This example returns the logging configuration of the NSX Manager and NSX Edge Nodes in the given workload domain.
 
@@ -585,7 +582,7 @@ function Publish-NsxLoggingConfig {
 }
 Export-ModuleMember -Function Publish-NsxLoggingConfig
 
-function Publish-AriaOpsLoggingConfig {
+Function Publish-AriaOpsLoggingConfig {
     <#
         .SYNOPSIS
         Publishes the logging configuration for VMware Aria Operations.
@@ -651,7 +648,7 @@ function Publish-AriaOpsLoggingConfig {
 }
 Export-ModuleMember -Function Publish-AriaOpsLoggingConfig
 
-function Publish-AriaAutomationLoggingConfig {
+Function Publish-AriaAutomationLoggingConfig {
     <#
         .SYNOPSIS
         Publishes the logging configuration for VMware Aria Automation.
@@ -718,7 +715,7 @@ function Publish-AriaAutomationLoggingConfig {
 }
 Export-ModuleMember -Function Publish-AriaAutomationLoggingConfig
 
-function Publish-AriaLifecycleLoggingConfig {
+Function Publish-AriaLifecycleLoggingConfig {
     <#
         .SYNOPSIS
         Publishes the logging configuration for VMware Suite Aria Lifecycle.
@@ -784,8 +781,7 @@ function Publish-AriaLifecycleLoggingConfig {
 }
 Export-ModuleMember -Function Publish-AriaLifecycleLoggingConfig
 
-function Publish-AriaOpsLogsLoggingConfig {
-
+Function Publish-AriaOpsLogsLoggingConfig {
     <#
         .SYNOPSIS
         Publishes the logging configuration for VMware Aria Operations for Logs.
@@ -859,11 +855,13 @@ function Publish-AriaOpsLogsLoggingConfig {
 }
 Export-ModuleMember -Function Publish-AriaOpsLogsLoggingConfig
 
-######### End Region Publish Functions #######################################
+#EndRegion  End Publish Functions                                   ######
+##########################################################################
 
-######### Begin Region Request Functions #####################################
+##########################################################################
+#Region     Begin Request Functions                                 ######
 
-function Request-EsxiLoggingConfig {
+Function Request-EsxiLoggingConfig {
     <#
         .SYNOPSIS
         Publishes the logging configuration for ESXi hosts.
@@ -966,7 +964,7 @@ function Request-EsxiLoggingConfig {
 }
 Export-ModuleMember -Function Request-EsxiLoggingConfig
 
-function Request-VcenterLoggingConfig {
+Function Request-VcenterLoggingConfig {
     <#
         .SYNOPSIS
         Requests the logging configuration for vCenter Server in a given domain.
@@ -1172,7 +1170,6 @@ Function Request-NsxLoggingConfig {
 
         .PARAMETER domain
         The name of the workload domain to run against.
-
     #>
 
     Param (
@@ -1253,7 +1250,6 @@ Function Request-NsxLoggingConfig {
                                 $nsxEdgeConfigObj | Add-Member -notepropertyname "NSX Edge" -notepropertyvalue "Not Found"
                                 $nsxMgrLogConfig.Add($nsxEdgeConfigObj)
                             }
-
                             return $nsxMgrLogConfig
                         } else {
                             Write-Error "Unable to connect to NSX Manager $($nsxtManagerDetails.fqdn) with provided credentials"
@@ -1268,7 +1264,7 @@ Function Request-NsxLoggingConfig {
 }
 Export-ModuleMember -Function Request-NsxLoggingConfig
 
-function Request-AriaOpsLoggingConfig {
+Function Request-AriaOpsLoggingConfig {
     <#
         .SYNOPSIS
         Return the logging configuration from VMware Aria Operations.
@@ -1345,7 +1341,7 @@ function Request-AriaOpsLoggingConfig {
 }
 Export-ModuleMember -Function Request-AriaOpsLoggingConfig
 
-function Request-AriaAutomationLoggingConfig {
+Function Request-AriaAutomationLoggingConfig {
     <#
         .SYNOPSIS
         Requests the logging configuration for VMware Aria Automation.
@@ -1417,7 +1413,6 @@ function Request-AriaAutomationLoggingConfig {
                             }
                         }
                     }
-
                 }
             }
         }
@@ -1431,7 +1426,7 @@ function Request-AriaAutomationLoggingConfig {
 }
 Export-ModuleMember -Function Request-AriaAutomationLoggingConfig
 
-function Request-AriaLifeCycleLoggingConfig {
+Function Request-AriaLifeCycleLoggingConfig {
     <#
         .SYNOPSIS
         Requests the logging configuration for VMware Aria Suite Lifecycle.
@@ -1455,7 +1450,6 @@ function Request-AriaLifeCycleLoggingConfig {
 
         .PARAMETER pass
         The password to authenticate to the SDDC Manager instance.
-
     #>
 
     Param (
@@ -1485,7 +1479,6 @@ function Request-AriaLifeCycleLoggingConfig {
                             $vrslcmConfigObj | Add-Member -notepropertyname "Port" -notepropertyvalue "Not Available"
                             $vrslcmConfigObj | Add-Member -notepropertyname "Alert" -notepropertyvalue 'RED'
                         }
-
                         $vrslcmLogConfig = New-Object System.Collections.Generic.List[System.Object]
                         $vrslcmLogConfig.Add($vrslcmConfigObj)
                         return $vrslcmLogConfig
@@ -1507,7 +1500,7 @@ function Request-AriaLifeCycleLoggingConfig {
 }
 Export-ModuleMember -Function Request-AriaLifecycleLoggingConfig
 
-function Request-AriaOpsLogsLoggingConfig {
+Function Request-AriaOpsLogsLoggingConfig {
     <#
         .SYNOPSIS
         Retrieves the logging configuration in VMware Aria Operations for Logs
@@ -1607,7 +1600,6 @@ function Request-AriaOpsLogsLoggingConfig {
                                 $vrliAgentsList.add($vrliAgentsConfigObj)
                             }
                             $vrliConfigObj | Add-Member -notepropertyname "Agents" -NotePropertyValue $vrliAgentsList
-
                             return $vrliConfigObj
                         } else {
                             Write-Error "Unable to connect to VMware Aria Operations for Logs $($vrliDetails.fqdn): PRE_VALIDATION_FAILED"
@@ -1625,21 +1617,24 @@ function Request-AriaOpsLogsLoggingConfig {
     }
 }
 Export-ModuleMember -Function Request-AriaOpsLogsLoggingConfig
-######### End Region Request Functions ######################################
 
+#EndRegion  End Request Functions                                   ######
+##########################################################################
 
-######### Begin Region Helper Functions #####################################
+##########################################################################
+#Region     Begin Helper Functions                                  ######
 
-function Convert-NumberFormat {
+Function Convert-NumberFormat {
     <#
-    .SYNOPSIS
-    Internal function to convert a number to K, M or B format
+        .SYNOPSIS
+        Internal Function to convert a number to K, M or B format
 
-    .EXAMPLE
-    Convert-NumberFormat -number 497868429
-    This converts the number to 497.87 M
+        .EXAMPLE
+        Convert-NumberFormat -number 497868429
+        This converts the number to 497.87 M
     #>
-    param (
+
+    Param (
         [double]$number
     )
 
@@ -1726,7 +1721,7 @@ Function Get-vRASyslogConfig {
     }
 }
 
-function Convert-ProtocolToString {
+Function Convert-ProtocolToString {
     Param (
         [Parameter (Mandatory = $true)] [ValidateNotNullOrEmpty()] [String]$protocol
     )
@@ -1783,7 +1778,6 @@ Function Get-NsxMissingLoggingStatus {
     }
 }
 
-
 Function Get-VrslcmLIAgentSettings {
     <#
         .SYNOPSIS
@@ -1828,9 +1822,12 @@ Function Set-CreateReportDirectory {
     $reportName
 }
 
-######### End Region Helper Functions #######################################
+#EndRegion  End Helper Functions                                    ######
+##########################################################################
 
-######### Report HTML Formatting Functions ###########################
+##########################################################################
+#Region     Begin HTML Report Functions                             ######
+
 Function Convert-CssClassStyle {
     Param (
         [Parameter (Mandatory = $true)] [ValidateNotNullOrEmpty()] [PSCustomObject]$htmlData
@@ -2100,5 +2097,5 @@ Function Save-ClarityReportFooter {
     </html>'
     $clarityCssFooter
 }
-#End Region  HTML Formatting Functions                     ###############
+#EndRegion  End HTML Report Functions                               ######
 ##########################################################################

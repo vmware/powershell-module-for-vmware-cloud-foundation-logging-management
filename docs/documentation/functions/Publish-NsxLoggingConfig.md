@@ -1,10 +1,10 @@
 # Publish-NsxLoggingConfig
 
-## SYNOPSIS
+## Synopsis
 
 Publishes the logging configuration for NSX Managers and NSX Edges.
 
-## SYNTAX
+## Syntax
 
 ### All-WorkloadDomains
 
@@ -20,27 +20,27 @@ Publish-NsxLoggingConfig -server <String> -user <String> [-pass <String>] -workl
  [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
-The Publish-NsxLoggingConfig cmdlet returns logging configuration of NSX Managers and NSX Edges.
+The `Publish-NsxLoggingConfig` cmdlet returns logging configuration of NSX Managers and NSX Edges.
 
-## EXAMPLES
+## Examples
 
-### EXAMPLE 1
+### Example 1
 
 ```powershell
 Publish-NsxLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -alldomains
 This example returns the logging configuration of the all the NSX Managers and NSX Edge Nodes in your VCF environment.
 ```
 
-### EXAMPLE 2
+### Example 2
 
 ```powershell
 Publish-NsxLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -workoadDomain sfo-m01
 This example returns the logging configuration of the NSX Manager and NSX Edge Nodes in the given workload domain.
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -server
 
@@ -138,6 +138,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### CommonParameters
+### Common Parameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).

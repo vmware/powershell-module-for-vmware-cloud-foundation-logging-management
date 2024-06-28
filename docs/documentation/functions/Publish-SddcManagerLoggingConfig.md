@@ -1,30 +1,30 @@
 # Publish-SddcManagerLoggingConfig
 
-## SYNOPSIS
+## Synopsis
 
 Publishes the logging configuration for SDDC Manager.
 
-## SYNTAX
+## Syntax
 
 ```powershell
 Publish-SddcManagerLoggingConfig [-server] <String> [-user] <String> [[-pass] <String>] [-localUser] <String>
  [[-localPass] <String>] [-json] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
-The Publish-SddcManagerLoggingConfig cmdlet returns logging configuration of the SDDC Manager.
+The `Publish-SddcManagerLoggingConfig` cmdlet returns logging configuration of the SDDC Manager.
 
-## EXAMPLES
+## Examples
 
-### EXAMPLE 1
+### Example 1
 
 ```powershell
 Publish-SddcManagerLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -localUser vcf -localPass VMw@re1!
 This example returns the logging configuration of the SDDC Manager in your VCF environment.
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -server
 
@@ -122,6 +122,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### CommonParameters
+### Common Parameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
