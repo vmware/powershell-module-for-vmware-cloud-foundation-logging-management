@@ -7,20 +7,18 @@ With these cmdlets, you can perform the following actions on a VMware Cloud Foun
 
 The module provides coverage for the following:
 
-=== ":material-shield-check: &nbsp; Logging Management"
+1. Generate a logging configuration report for the components across your VMware Cloud Foundation.
 
-    1. Generate a logging configuration report for the components across your VMware Cloud Foundation.
+   Components:
 
-    Components:
-
-    * VMware SDDC Manager
-    * VMware vCenter Server
-    * VMware ESXi
-    * VMware NSX Manager
-    * VMware NSX Edge
-    * VMware Aria Suite Lifecycle
-    * VMware Aria Operations
-    * VMware Aria Operations for Logs
-    * VMware Aria Automation
+   * VMware SDDC Manager
+   * VMware vCenter Server
+   * VMware ESXi
+   * VMware NSX Manager
+   * VMware NSX Edge
+   * VMware Aria Suite Lifecycle
+   * VMware Aria Operations
+   * VMware Aria Operations for Logs
+   * VMware Aria Automation
 
 [docs-vmware-cloud-foundation]: https://docs.vmware.com/en/VMware-Cloud-Foundation/index.html

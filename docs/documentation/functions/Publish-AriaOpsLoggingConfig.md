@@ -1,30 +1,30 @@
 # Publish-AriaOpsLoggingConfig
 
-## SYNOPSIS
+## Synopsis
 
 Publishes the logging configuration for VMware Aria Operations.
 
-## SYNTAX
+## Syntax
 
 ```powershell
 Publish-AriaOpsLoggingConfig [-server] <String> [-user] <String> [[-pass] <String>] [-json]
  [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
-The Publish-AriaOpsLoggingConfig cmdlet returns logging configuration of VMware Aria Operations.
+The `Publish-AriaOpsLoggingConfig` cmdlet returns logging configuration of VMware Aria Operations.
 
-## EXAMPLES
+## Examples
 
-### EXAMPLE 1
+### Example 1
 
 ```powershell
 Publish-AriaOpsLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123!
 This example returns the logging configuration of the VMware Aria Operations in your VCF environment.
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -server
 
@@ -90,6 +90,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### CommonParameters
+### Common Parameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
