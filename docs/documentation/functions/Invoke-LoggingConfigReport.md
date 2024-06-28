@@ -1,10 +1,10 @@
 # Invoke-LoggingConfigReport
 
-## SYNOPSIS
+## Synopsis
 
 Generates a Logging Configuration report for a workload domain or all workload domains.
 
-## SYNTAX
+## Syntax
 
 ### All-WorkloadDomains
 
@@ -22,27 +22,27 @@ Invoke-LoggingConfigReport -sddcManagerFqdn <String> -sddcManagerUser <String> [
  -workloadDomain <String> [-darkMode] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
-The Invoke-LoggingConfigAuditReport generates a logging configuration report for a VMware Cloud Foundation instance.
+The `Invoke-LoggingConfigAuditReport` generates a logging configuration report for a VMware Cloud Foundation instance.
 
-## EXAMPLES
+## Examples
 
-### EXAMPLE 1
+### Example 1
 
 ```powershell
 Invoke-LoggingConfigReport -sddcManagerFqdn sfo-vcf01.sfo.rainpole.io -sddcManagerUser administrator@vsphere.local -sddcManagerPass VMw@re123! -sddcManagerLocalUser vcf -sddcManagerLocalPass VMw@re1! -reportPath "F:\Reporting" -darkMode -allDomains
 This example runs a logging configuration report for all workload domains within an SDDC Manager instance.
 ```
 
-### EXAMPLE 2
+### Example 2
 
 ```powershell
 Invoke-LoggingConfigReport -sddcManagerFqdn sfo-vcf01.sfo.rainpole.io -sddcManagerUser administrator@vsphere.local -sddcManagerPass VMw@re123! -sddcManagerLocalUser vcf -sddcManagerLocalPass VMw@re1! -reportPath "F:\Reporting" -darkMode -workloadDomain sfo-m01
 This example runs a logging configuration report for the provided workload domain within an SDDC Manager instance.
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -sddcManagerFqdn
 
@@ -188,6 +188,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### CommonParameters
+### Common Parameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).

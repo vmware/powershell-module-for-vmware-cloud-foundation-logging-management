@@ -1,35 +1,35 @@
 # Request-AriaAutomationLoggingConfig
 
-## SYNOPSIS
+## Synopsis
 
 Requests the logging configuration for VMware Aria Automation.
 
-## SYNTAX
+## Syntax
 
 ```powershell
 Request-AriaAutomationLoggingConfig [-server] <String> [-user] <String> [-pass] <String>
  [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
-The Request-AriaAutomationLoggingConfig cmdlet returns logging configuration of VMware Aria Automation.
+The `Request-AriaAutomationLoggingConfig` cmdlet returns logging configuration of VMware Aria Automation.
 The cmdlet connects to the SDDC Manager using the -server, -user, and -pass values:
 
 - Validates that network connectivity and authentication is possible to SDDC Manager
 - Validates that network connectivity and authentication is possible to vCenter Server
 - Validated that network connectivity and authentication is possible to Aria Automation
 
-## EXAMPLES
+## Examples
 
-### EXAMPLE 1
+### Example 1
 
 ```powershell
 Request-AriaAutomationLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123!
 This example returns the logging configuration of VMware Aria Automation.
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -server
 
@@ -79,6 +79,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### CommonParameters
+### Common Parameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
