@@ -1,4 +1,11 @@
 # MacOS
 ## Ignore desktop services files.
 **/.DS_Store
-.site
+
+# Pester
+## Ignore logs directory.
+**/tests/logs/*.log
+
+# MkDocs
+## Ignore site directory.
+**/.site/**
