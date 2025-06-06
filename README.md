@@ -35,9 +35,11 @@ The module provides coverage for the following:
    * VMware Aria Operations for Logs
    * VMware Aria Automation
 
+For details on specific VMware Cloud Foundation versions supported by this module, please refer to the [documentation][docs-module].
+
 ## Documentation
 
-For detailed instructions on using this module, refer to the [official documentation][docs-module].
+For detailed instructions on using this module, refer to the [documentation][docs-module].
 
 ## Contributing
 
