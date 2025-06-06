@@ -31,17 +31,22 @@ The module provides coverage for the following:
 
 ## Requirements
 
-### Platforms
+### VMware Cloud Foundation
 
-The following table lists the supported platforms for this module.
+The following table lists the supported releases for this module.
 
 | Platform                                                     | Support                             |
 | ------------------------------------------------------------ | ----------------------------------- |
 | :fontawesome-solid-cloud: &nbsp; VMware Cloud Foundation 5.2 | :fontawesome-solid-check:{ .green } |
 | :fontawesome-solid-cloud: &nbsp; VMware Cloud Foundation 5.1 | :fontawesome-solid-check:{ .green } |
-| :fontawesome-solid-cloud: &nbsp; VMware Cloud Foundation 5.0 | :fontawesome-solid-check:{ .green } |
-| :fontawesome-solid-cloud: &nbsp; VMware Cloud Foundation 4.5 | :fontawesome-solid-check:{ .green } |
-| :fontawesome-solid-cloud: &nbsp; VMware Cloud Foundation 4.4 | :fontawesome-solid-check:{ .green } |
+
+???+ tip "Support for Newer Major Releases"
+
+    This module will **only** be sustained for supported versions of the VMware Cloud Foundation releases listed above to address critical issues. You can find general details on supported versions in the [Broadcom Product Lifecycle](https://support.broadcom.com/group/ecx/productlifecycle).
+
+    Please note that this module **will not** provide support or new enhancements for future major releases of VMware Cloud Foundation. If you're planning to upgrade to those newer releases, we encourage you to explore alternative in-product or custom automation solutions.
+
+    We truly appreciate your reliance on and support of this module. Thank you for your understanding as we transition to sustaining the module for these specific major versions.
 
 ### PowerShell
 
