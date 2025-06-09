@@ -2,7 +2,7 @@
 
 ## Synopsis
 
-Retrieves the logging configuration in VMware Aria Operations for Logs
+Retrieves the logging configuration in VMware Aria Operations for Logs.
 
 ## Syntax
 
@@ -16,17 +16,18 @@ Request-AriaOpsLogsLoggingConfig [-server] <String> [-user] <String> [-pass] <St
 The `Request-AriaOpsLogsLoggingConfig` cmdlet returns log forwarders and agents configuration from VMware Aria Operations for Logs.
 The cmdlet connects to the SDDC Manager using the -server, -user, and -pass values:
 
-- Validates that network connectivity and authentication is possible to SDDC Manager
-- Validates that network connectivity and authentication is possible to vCenter Server
+- Validates that network connectivity and authentication is possible to SDDC Manager.
+- Validates that network connectivity and authentication is possible to vCenter.
 
 ## Examples
 
 ### Example 1
 
 ```powershell
-Request-AriaOpsLogsLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123!
-This example returns the logging configuration of VMware Aria Operations for Logs.
+Request-AriaOpsLogsLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password]
 ```
+
+This example returns the logging configuration of VMware Aria Operations for Logs.
 
 ## Parameters
 

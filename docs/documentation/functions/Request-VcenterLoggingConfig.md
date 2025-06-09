@@ -2,7 +2,7 @@
 
 ## Synopsis
 
-Requests the logging configuration for vCenter Server in a given domain.
+Requests the logging configuration for vCenter for a specified workload domain.
 
 ## Syntax
 
@@ -13,20 +13,21 @@ Request-VcenterLoggingConfig [-server] <String> [-user] <String> [-pass] <String
 
 ## Description
 
-The `Request-VcenterLoggingConfig` cmdlet returns logging configuration the vCenter Server in the given domain.
+The `Request-VcenterLoggingConfig` cmdlet returns logging configuration the vCenter for a specified workload domain.
 The cmdlet connects to the SDDC Manager using the -server, -user, and -pass values:
 
-- Validates that network connectivity and authentication is possible to SDDC Manager
-- Validates that network connectivity and authentication is possible to vCenter Server
+- Validates that network connectivity and authentication is possible to SDDC Manager.
+- Validates that network connectivity and authentication is possible to vCenter.
 
 ## Examples
 
 ### Example 1
 
 ```powershell
-Request-VcenterLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -domain sfo-m01
-This example returns the logging configuration of the vCenter Server in the provided workload domain
+Request-VcenterLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password] -domain [workload_domain_name]
 ```
+
+This example returns the logging configuration of the vCenter for a specified workload domain.
 
 ## Parameters
 

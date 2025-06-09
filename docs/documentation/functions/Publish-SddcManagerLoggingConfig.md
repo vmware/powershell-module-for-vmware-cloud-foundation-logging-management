@@ -20,9 +20,10 @@ The `Publish-SddcManagerLoggingConfig` cmdlet returns logging configuration of t
 ### Example 1
 
 ```powershell
-Publish-SddcManagerLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -localUser vcf -localPass VMw@re1!
-This example returns the logging configuration of the SDDC Manager in your VCF environment.
+Publish-SddcManagerLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password] -localUser [local_username] -localPass [local_password]
 ```
+
+This example returns the logging configuration of the SDDC Manager in a VCF instance.
 
 ## Parameters
 

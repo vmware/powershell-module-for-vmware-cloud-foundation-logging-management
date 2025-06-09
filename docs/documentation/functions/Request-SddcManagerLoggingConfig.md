@@ -20,9 +20,10 @@ The `Request-SddcManagerLoggingConfig` gets the logging configuration from SDDC 
 ### Example 1
 
 ```powershell
-Request-SddcManagerLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -localUser vcf -localPass VMw@re1!
-This example gets the logging configuration from SDDC Manager.
+Request-SddcManagerLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password] -localUser [local_username] -localPass [local_password]
 ```
+
+This example gets the logging configuration from SDDC Manager.
 
 ## Parameters
 

@@ -20,9 +20,10 @@ The `Publish-AriaAutomationLoggingConfig` cmdlet returns logging configuration o
 ### Example 1
 
 ```powershell
-Publish-AriaAutomationLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123!
-This example returns the logging configuration of the VMware Aria Automation in your VCF environment.
+Publish-AriaAutomationLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password]
 ```
+
+This example returns the logging configuration of the VMware Aria Automation in a VCF instance.
 
 ## Parameters
 

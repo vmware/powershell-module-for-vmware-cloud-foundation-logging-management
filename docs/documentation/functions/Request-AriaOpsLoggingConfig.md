@@ -16,15 +16,15 @@ Request-AriaOpsLoggingConfig [-server] <String> [-user] <String> [[-pass] <Strin
 The `Request-AriaOpsLoggingConfig` cmdlet returns logging configuration of VMware Aria Operations.
 The cmdlet connects to the SDDC Manager using the -server, -user, and -pass values:
 
-- Validates that network connectivity and authentication is possible to SDDC Manager
-- Validates that network connectivity and authentication is possible to vCenter Server
+- Validates that network connectivity and authentication is possible to SDDC Manager.
+- Validates that network connectivity and authentication is possible to vCenter.
 
 ## Examples
 
 ### Example 1
 
 ```powershell
-Request-AriaOpsLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123!
+Request-AriaOpsLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password]
 This example returns the logging configuration of VMware Aria Operations.
 ```
 

@@ -2,47 +2,49 @@
 
 ## Synopsis
 
-Publishes the logging configuration for vCenter Server instances.
+Publishes the logging configuration for vCenter instances.
 
 ## Syntax
 
 ### All-WorkloadDomains
 
 ```powershell
-Publish-VcenterLoggingConfig -server <String> -user <String> [-pass <String>] [-allDomains] [-json]
+Publish-VcenterLoggingConfig [-server] <String> [-user] <String> [-pass <String>] [-allDomains] [-json]
  [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### Specific-WorkloadDomain
 
 ```powershell
-Publish-VcenterLoggingConfig -server <String> -user <String> [-pass <String>] -workloadDomain <String> [-json]
+Publish-VcenterLoggingConfig [-server] <String> [-user] <String> [-pass <String>] [-workloadDomain] <String> [-json]
  [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## Description
 
-The `Publish-VcenterLoggingConfig` cmdlet returns logging configuration of all vCenter Server instances.
+The `Publish-VcenterLoggingConfig` cmdlet returns logging configuration of all vCenter instances.
 The cmdlet connects to the SDDC Manager using the -server, -user, and -pass values:
 
-- Validates that network connectivity and authentication is possible to SDDC Manager
-- Validates that network connectivity and authentication is possible to vCenter Server
+- Validates that network connectivity and authentication is possible to SDDC Manager.
+- Validates that network connectivity and authentication is possible to vCenter.
 
 ## Examples
 
 ### Example 1
 
 ```powershell
-Publish-VcenterLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -allDomains
-This example returns the logging configuration of all vCenter Server instances in your VCF environment.
+Publish-VcenterLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password] -allDomains
 ```
+
+This example returns the logging configuration of all vCenter instances in a VCF instance.
 
 ### Example 2
 
 ```powershell
-Publish-VcenterLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -workloadDomain sfo-w01
-This example returns the logging configuration of the vCenter server in the provided workload domain
+Publish-VcenterLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password] -workloadDomain [workload_domain_name]
 ```
+
+This example returns the logging configuration of the vCenter in a specified workload domain.
 
 ## Parameters
 
@@ -112,7 +114,7 @@ Accept wildcard characters: False
 
 ### -workloadDomain
 
-Switch to publish the logging configuration for a specific workload domain.
+Switch to publish the logging configuration for a specified workload domain.
 
 ```yaml
 Type: String
