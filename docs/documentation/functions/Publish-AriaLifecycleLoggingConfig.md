@@ -20,9 +20,10 @@ The `Publish-AriaLifecycleLoggingConfig` cmdlet returns logging configuration of
 ### Example 1
 
 ```powershell
-Publish-AriaLifecycleLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123!
-This example returns the logging configuration of the VMware Aria Suite Lifecycle in your VCF environment.
+Publish-AriaLifecycleLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password]
 ```
+
+This example returns the logging configuration of the VMware Aria Suite Lifecycle in a VCF instance.
 
 ## Parameters
 

@@ -13,21 +13,22 @@ Request-AriaLifeCycleLoggingConfig [-server] <String> [-user] <String> [-pass] <
 
 ## Description
 
-The `Request-AriaLifeCycleLoggingConfig` cmdlet returns logging configuration of VMware Aria LifeCycle
+The `Request-AriaLifeCycleLoggingConfig` cmdlet returns logging configuration of VMware Aria Lifecycle.
 The cmdlet connects to the SDDC Manager using the -server, -user, and -pass values:
 
-- Validates that network connectivity and authentication is possible to SDDC Manager
-- Validates that network connectivity and authentication is possible to vCenter Server
-- Validated that network connectivity and authentication is possible to Aria Automation
+- Validates that network connectivity and authentication is possible to SDDC Manager.
+- Validates that network connectivity and authentication is possible to vCenter.
+- Validated that network connectivity and authentication is possible to VMware Aria Suite Lifecycle.
 
 ## Examples
 
 ### Example 1
 
 ```powershell
-Request-AriaLifeCycleLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123!
-This example returns the logging configuration of VMware Aria Suite Lifecycle
+Request-AriaLifeCycleLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password]
 ```
+
+This example returns the logging configuration of VMware Aria Suite Lifecycle.
 
 ## Parameters
 

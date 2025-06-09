@@ -2,7 +2,7 @@
 
 ## Synopsis
 
-Publishes the logging configuration for ESXi hosts.
+Publishes the logging configuration for ESX hosts.
 
 ## Syntax
 
@@ -13,27 +13,29 @@ Request-EsxiLoggingConfig [-server] <String> [-user] <String> [-pass] <String> [
 
 ## Description
 
-The `Publish-EsxiLoggingConfig` cmdlet returns logging configuration of all ESXi hosts.
+The `Publish-EsxiLoggingConfig` cmdlet returns logging configuration of all ESX hosts.
 The cmdlet connects to the SDDC Manager using the -server, -user, and -pass values:
 
-- Validates that network connectivity and authentication is possible to SDDC Manager
-- Validates that network connectivity and authentication is possible to vCenter Server
+- Validates that network connectivity and authentication is possible to SDDC Manager.
+- Validates that network connectivity and authentication is possible to vCenter.
 
 ## Examples
 
 ### Example 1
 
 ```powershell
-Request-EsxiLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -domain sfo-m01 -cluster sfo-m01-cl01
-This example returns the logging configuration of all ESXi hosts in your VCF environment.
+Request-EsxiLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password] -cluster [cluster_name]
 ```
+
+This example returns the logging configuration of all ESX hosts in a specified cluster in a VCF instance.
 
 ### Example 2
 
 ```powershell
-Request-EsxiLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -domain sfo-m01 -cluster sfo-m01-cl01
-This example returns the logging configuration of all ESXi hosts in the provided workload domain.
+Request-EsxiLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password] -domain [workload_domain_name] -cluster [cluster_name]
 ```
+
+This example returns the logging configuration of all ESX hosts in a specified workload domain in a VCF instance.
 
 ## Parameters
 

@@ -2,23 +2,23 @@
 
 ## Synopsis
 
-Generates a Logging Configuration report for a workload domain or all workload domains.
+Generates a logging configuration report for a specified workload domain or all workload domains.
 
 ## Syntax
 
 ### All-WorkloadDomains
 
 ```powershell
-Invoke-LoggingConfigReport -sddcManagerFqdn <String> -sddcManagerUser <String> [-sddcManagerPass <String>]
- [-sddcManagerLocalUser <String>] [-sddcManagerLocalPass <String>] -reportPath <String> [-allDomains]
+Invoke-LoggingConfigReport [-sddcManagerFqdn] <String> [-sddcManagerUser] <String> [-sddcManagerPass <String>]
+ [-sddcManagerLocalUser <String>] [-sddcManagerLocalPass <String>] [-reportPath] <String> [-allDomains]
  [-darkMode] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### Specific-WorkloadDomain
 
 ```powershell
-Invoke-LoggingConfigReport -sddcManagerFqdn <String> -sddcManagerUser <String> [-sddcManagerPass <String>]
- [-sddcManagerLocalUser <String>] [-sddcManagerLocalPass <String>] -reportPath <String>
+Invoke-LoggingConfigReport [-sddcManagerFqdn] <String> [-sddcManagerUser] <String> [-sddcManagerPass <String>]
+ [-sddcManagerLocalUser <String>] [-sddcManagerLocalPass <String>] [-reportPath] <String>
  -workloadDomain <String> [-darkMode] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
@@ -31,16 +31,19 @@ The `Invoke-LoggingConfigAuditReport` generates a logging configuration report f
 ### Example 1
 
 ```powershell
-Invoke-LoggingConfigReport -sddcManagerFqdn sfo-vcf01.sfo.rainpole.io -sddcManagerUser administrator@vsphere.local -sddcManagerPass VMw@re123! -sddcManagerLocalUser vcf -sddcManagerLocalPass VMw@re1! -reportPath "F:\Reporting" -darkMode -allDomains
-This example runs a logging configuration report for all workload domains within an SDDC Manager instance.
+Invoke-LoggingConfigReport -sddcManagerFqdn [sddc_manager_fqdn] -sddcManagerUser [admin_username] -sddcManagerPass [admin_password] -sddcManagerLocalUser [local_username] -sddcManagerLocalPass [local_password] -reportPath [report_path] -darkMode -allDomains
 ```
+
+This example runs a logging configuration report for all workload domains within an SDDC Manager instance.
+
 
 ### Example 2
 
 ```powershell
-Invoke-LoggingConfigReport -sddcManagerFqdn sfo-vcf01.sfo.rainpole.io -sddcManagerUser administrator@vsphere.local -sddcManagerPass VMw@re123! -sddcManagerLocalUser vcf -sddcManagerLocalPass VMw@re1! -reportPath "F:\Reporting" -darkMode -workloadDomain sfo-m01
-This example runs a logging configuration report for the provided workload domain within an SDDC Manager instance.
+Invoke-LoggingConfigReport -sddcManagerFqdn [sddc_manager_fqdn] -sddcManagerUser [admin_username] -sddcManagerPass [admin_password] -sddcManagerLocalUser [local_username] -sddcManagerLocalPass [local_password] -reportPath [report_path] -darkMode -workloadDomain [workload_domain_name]
 ```
+
+This example runs a logging configuration report for a specified workload domain within an SDDC Manager instance.
 
 ## Parameters
 
@@ -158,7 +161,7 @@ Accept wildcard characters: False
 
 ### -workloadDomain
 
-Switch to run the report for a specific workload domain.
+Switch to run the report for a specified workload domain.
 
 ```yaml
 Type: String

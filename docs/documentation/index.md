@@ -6,7 +6,7 @@ generate HTML logging configuration report and manage logging configurations acr
 Cloud Foundatiоn instance.
 
 With these cmdlets, you can perform the following actions on a VMware Cloud Foundation instance or a
-specific workload domain.
+specified workload domain.
 
 The module provides coverage for the following:
 

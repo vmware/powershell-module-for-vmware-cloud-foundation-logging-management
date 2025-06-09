@@ -9,14 +9,14 @@ Publishes the logging configuration for NSX Managers and NSX Edges.
 ### All-WorkloadDomains
 
 ```powershell
-Publish-NsxLoggingConfig -server <String> -user <String> [-pass <String>] [-allDomains] [-json]
+Publish-NsxLoggingConfig [-server] <String> [-user] <String> [-pass <String>] [-allDomains] [-json]
  [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### Specific-WorkloadDomain
 
 ```powershell
-Publish-NsxLoggingConfig -server <String> -user <String> [-pass <String>] -workloadDomain <String> [-json]
+Publish-NsxLoggingConfig [-server] <String> [-user] <String> [-pass <String>] [-workloadDomain] <String> [-json]
  [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
@@ -29,16 +29,18 @@ The `Publish-NsxLoggingConfig` cmdlet returns logging configuration of NSX Manag
 ### Example 1
 
 ```powershell
-Publish-NsxLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -alldomains
-This example returns the logging configuration of the all the NSX Managers and NSX Edge Nodes in your VCF environment.
+Publish-NsxLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password] -alldomains
 ```
+
+This example returns the logging configuration of the all the NSX Managers and NSX Edge Nodes in a VCF instance.
 
 ### Example 2
 
 ```powershell
-Publish-NsxLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -workoadDomain sfo-m01
-This example returns the logging configuration of the NSX Manager and NSX Edge Nodes in the given workload domain.
+Publish-NsxLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password] -workoadDomain [workload_domain_name]
 ```
+
+This example returns the logging configuration of the NSX Manager and NSX Edge Nodes in a specified workload domain.
 
 ## Parameters
 
@@ -108,7 +110,7 @@ Accept wildcard characters: False
 
 ### -workloadDomain
 
-Switch to publish the logging configuration for a specific workload domain.
+Switch to publish the logging configuration for a specified workload domain.
 
 ```yaml
 Type: String

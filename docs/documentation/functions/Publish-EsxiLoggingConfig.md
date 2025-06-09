@@ -2,47 +2,49 @@
 
 ## Synopsis
 
-Publishes the logging configuration for ESXi hosts.
+Publishes the logging configuration for ESX hosts.
 
 ## Syntax
 
 ### All-WorkloadDomains
 
 ```powershell
-Publish-EsxiLoggingConfig -server <String> -user <String> [-pass <String>] [-allDomains] [-json]
+Publish-EsxiLoggingConfig [-server] <String> [-user] <String> [-pass <String>] [-allDomains] [-json]
  [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### Specific-WorkloadDomain
 
 ```powershell
-Publish-EsxiLoggingConfig -server <String> -user <String> [-pass <String>] -workloadDomain <String> [-json]
+Publish-EsxiLoggingConfig [-server] <String> [-user] <String> [-pass <String>] [-workloadDomain] <String> [-json]
  [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## Description
 
-The `Publish-EsxiLoggingConfig` cmdlet returns logging configuration of all ESXi hosts.
+The `Publish-EsxiLoggingConfig` cmdlet returns logging configuration of all ESX hosts.
 The cmdlet connects to the SDDC Manager using the -server, -user, and -pass values:
 
-- Validates that network connectivity and authentication is possible to SDDC Manager
-- Validates that network connectivity and authentication is possible to vCenter Server
+- Validates that network connectivity and authentication is possible to SDDC Manager.
+- Validates that network connectivity and authentication is possible to vCenter.
 
 ## Examples
 
 ### Example 1
 
 ```powershell
-Publish-EsxiLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -allDomains
-This example returns the logging configuration of all ESXi hosts in your VCF environment.
+Publish-EsxiLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password] -allDomains
 ```
+
+This example returns the logging configuration of all ESX hosts in your VCF environment.
 
 ### Example 2
 
 ```powershell
-Publish-EsxiLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -workloadDomain sfo-w01
-This example returns the logging configuration of all ESXi hosts in the provided workload domain.
+Publish-EsxiLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password] -workloadDomain [workload_domain_name]
 ```
+
+This example returns the logging configuration of all ESX hosts in a specified workload domain.
 
 ## Parameters
 
