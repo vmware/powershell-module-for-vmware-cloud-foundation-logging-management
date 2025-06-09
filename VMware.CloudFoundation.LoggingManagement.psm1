@@ -84,18 +84,18 @@ $global:cfapiProtocols = @("http", "https")
 Function Invoke-LoggingConfigReport {
     <#
         .SYNOPSIS
-        Generates an logging configuration report for a workload domain or all workload domains.
+        Generates a logging configuration report for a specified workload domain or all workload domains.
 
         .DESCRIPTION
         The Invoke-LoggingConfigAuditReport generates a logging configuration report for a VMware Cloud Foundation instance.
 
         .EXAMPLE
-        Invoke-LoggingConfigReport -sddcManagerFqdn sfo-vcf01.sfo.rainpole.io -sddcManagerUser administrator@vsphere.local -sddcManagerPass VMw@re123! -sddcManagerLocalUser vcf -sddcManagerLocalPass VMw@re1! -reportPath "F:\Reporting" -darkMode -allDomains
+        Invoke-LoggingConfigReport -sddcManagerFqdn [sddc_manager_fqdn] -sddcManagerUser [admin_username] -sddcManagerPass [admin_password] -sddcManagerLocalUser [local_username] -sddcManagerLocalPass [local_password] -reportPath [report_path] -darkMode -allDomains
         This example runs a logging configuration report for all workload domains within an SDDC Manager instance.
 
         .EXAMPLE
-        Invoke-LoggingConfigReport -sddcManagerFqdn sfo-vcf01.sfo.rainpole.io -sddcManagerUser administrator@vsphere.local -sddcManagerPass VMw@re123! -sddcManagerLocalUser vcf -sddcManagerLocalPass VMw@re1! -reportPath "F:\Reporting" -darkMode -workloadDomain sfo-m01
-        This example runs a logging configuration report for the provided workload domain within an SDDC Manager instance.
+        Invoke-LoggingConfigReport -sddcManagerFqdn [sddc_manager_fqdn] -sddcManagerUser [admin_username] -sddcManagerPass [admin_password] -sddcManagerLocalUser [local_username] -sddcManagerLocalPass [local_password] -reportPath [report_path] -darkMode -workloadDomain [workload_domain_name]
+        This example runs a logging configuration report for a specified workload domain within an SDDC Manager instance.
 
         .PARAMETER sddcManagerFqdn
         The fully qualified domain name of the SDDC Manager instance.
@@ -119,7 +119,7 @@ Function Invoke-LoggingConfigReport {
         Switch to run the report for all workload domains.
 
         .PARAMETER workloadDomain
-        Switch to run the report for a specific workload domain.
+        Switch to run the report for a specified workload domain.
 
         .PARAMETER darkMode
         Switch to use dark mode for the report.
@@ -227,21 +227,22 @@ Export-ModuleMember -Function Invoke-LoggingConfigReport
 Function Publish-EsxiLoggingConfig {
     <#
         .SYNOPSIS
-        Publishes the logging configuration for ESXi hosts.
+        Publishes the logging configuration for ESX hosts.
 
         .DESCRIPTION
-        The Publish-EsxiLoggingConfig cmdlet returns logging configuration of all ESXi hosts.
+        The Publish-EsxiLoggingConfig cmdlet returns logging configuration of all ESX hosts.
         The cmdlet connects to the SDDC Manager using the -server, -user, and -pass values:
-        - Validates that network connectivity and authentication is possible to SDDC Manager
-        - Validates that network connectivity and authentication is possible to vCenter Server
+
+        - Validates that network connectivity and authentication is possible to SDDC Manager.
+        - Validates that network connectivity and authentication is possible to vCenter.
 
         .EXAMPLE
-        Publish-EsxiLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -allDomains
-        This example returns the logging configuration of all ESXi hosts in your VCF environment.
+        Publish-EsxiLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password] -allDomains
+        This example returns the logging configuration of all ESX hosts in your VCF environment.
 
         .EXAMPLE
-        Publish-EsxiLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -workloadDomain sfo-w01
-        This example returns the logging configuration of all ESXi hosts in the provided workload domain.
+        Publish-EsxiLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password] -workloadDomain [workload_domain_name]
+        This example returns the logging configuration of all ESX hosts in a specified workload domain.
 
         .PARAMETER server
         The fully qualified domain name of the SDDC Manager instance.
@@ -256,7 +257,7 @@ Function Publish-EsxiLoggingConfig {
         Switch to publish the logging configuration for all workload domains.
 
         .PARAMETER workloadDomain
-        Switch to publish the logging configuration for a specific workload domain.
+        Switch to publish the logging configuration for a specified workload domain.
 
         .PARAMETER json
         Switch to publish the logging configuration in JSON format.
@@ -336,21 +337,22 @@ Function Publish-VcenterLoggingConfig {
 
     <#
         .SYNOPSIS
-        Publishes the logging configuration for vCenter Server instances.
+        Publishes the logging configuration for vCenter instances.
 
         .DESCRIPTION
-        The Publish-VcenterLoggingConfig cmdlet returns logging configuration of all vCenter Server instances.
+        The Publish-VcenterLoggingConfig cmdlet returns logging configuration of all vCenter instances.
         The cmdlet connects to the SDDC Manager using the -server, -user, and -pass values:
-        - Validates that network connectivity and authentication is possible to SDDC Manager
-        - Validates that network connectivity and authentication is possible to vCenter Server
+
+        - Validates that network connectivity and authentication is possible to SDDC Manager.
+        - Validates that network connectivity and authentication is possible to vCenter.
 
         .EXAMPLE
-        Publish-VcenterLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -allDomains
-        This example returns the logging configuration of all vCenter Server instances in your VCF environment.
+        Publish-VcenterLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password] -allDomains
+        This example returns the logging configuration of all vCenter instances in a VCF instance.
 
         .EXAMPLE
-        Publish-VcenterLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -workloadDomain sfo-w01
-        This example returns the logging configuration of the vCenter server in the provided workload domain
+        Publish-VcenterLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password] -workloadDomain [workload_domain_name]
+        This example returns the logging configuration of the vCenter in a specified workload domain.
 
         .PARAMETER server
         The fully qualified domain name of the SDDC Manager instance.
@@ -365,7 +367,7 @@ Function Publish-VcenterLoggingConfig {
         Switch to publish the logging configuration for all workload domains.
 
         .PARAMETER workloadDomain
-        Switch to publish the logging configuration for a specific workload domain.
+        Switch to publish the logging configuration for a specified workload domain.
 
         .PARAMETER json
         Switch to publish the logging configuration in JSON format.
@@ -431,8 +433,8 @@ Function Publish-SddcManagerLoggingConfig {
         The Publish-SddcManagerLoggingConfig cmdlet returns logging configuration of the SDDC Manager.
 
         .EXAMPLE
-        Publish-SddcManagerLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -localUser vcf -localPass VMw@re1!
-        This example returns the logging configuration of the SDDC Manager in your VCF environment.
+        Publish-SddcManagerLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password] -localUser [local_username] -localPass [local_password]
+        This example returns the logging configuration of the SDDC Manager in a VCF instance.
 
         .PARAMETER server
         The fully qualified domain name of the SDDC Manager instance.
@@ -506,12 +508,12 @@ Function Publish-NsxLoggingConfig {
         The Publish-NsxLoggingConfig cmdlet returns logging configuration of NSX Managers and NSX Edges.
 
         .EXAMPLE
-        Publish-NsxLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -alldomains
-        This example returns the logging configuration of the all the NSX Managers and NSX Edge Nodes in your VCF environment.
+        Publish-NsxLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password] -alldomains
+        This example returns the logging configuration of the all the NSX Managers and NSX Edge Nodes in a VCF instance.
 
         .EXAMPLE
-        Publish-NsxLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -workoadDomain sfo-m01
-        This example returns the logging configuration of the NSX Manager and NSX Edge Nodes in the given workload domain.
+        Publish-NsxLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password] -workoadDomain [workload_domain_name]
+        This example returns the logging configuration of the NSX Manager and NSX Edge Nodes in a specified workload domain.
 
         .PARAMETER server
         The fully qualified domain name of the SDDC Manager instance.
@@ -526,7 +528,7 @@ Function Publish-NsxLoggingConfig {
         Switch to publish the logging configuration for all workload domains.
 
         .PARAMETER workloadDomain
-        Switch to publish the logging configuration for a specific workload domain.
+        Switch to publish the logging configuration for a specified workload domain.
 
         .PARAMETER json
         Switch to publish the logging configuration in JSON format.
@@ -592,8 +594,8 @@ Function Publish-AriaOpsLoggingConfig {
         The Publish-AriaOpsLoggingConfig cmdlet returns logging configuration of VMware Aria Operations.
 
         .EXAMPLE
-        Publish-AriaOpsLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123!
-        This example returns the logging configuration of the VMware Aria Operations in your VCF environment.
+        Publish-AriaOpsLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password]
+        This example returns the logging configuration of the VMware Aria Operations in a VCF instance.
 
         .PARAMETER server
         The fully qualified domain name of the SDDC Manager instance.
@@ -658,8 +660,8 @@ Function Publish-AriaAutomationLoggingConfig {
         The Publish-AriaAutomationLoggingConfig cmdlet returns logging configuration of VMware Aria Automation.
 
         .EXAMPLE
-        Publish-AriaAutomationLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123!
-        This example returns the logging configuration of the VMware Aria Automation in your VCF environment.
+        Publish-AriaAutomationLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password]
+        This example returns the logging configuration of the VMware Aria Automation in a VCF instance.
 
         .PARAMETER server
         The fully qualified domain name of the SDDC Manager instance.
@@ -725,8 +727,8 @@ Function Publish-AriaLifecycleLoggingConfig {
         The Publish-AriaLifecycleLoggingConfig cmdlet returns logging configuration of VMware Aria Suite Lifecycle.
 
         .EXAMPLE
-        Publish-AriaLifecycleLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123!
-        This example returns the logging configuration of the VMware Aria Suite Lifecycle in your VCF environment.
+        Publish-AriaLifecycleLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password]
+        This example returns the logging configuration of the VMware Aria Suite Lifecycle in a VCF instance.
 
         .PARAMETER server
         The fully qualified domain name of the SDDC Manager instance.
@@ -791,8 +793,8 @@ Function Publish-AriaOpsLogsLoggingConfig {
         The Publish-AriaOpsLogsLoggingConfig cmdlet returns log forwarders and agents configuration from VMware Aria Operations for Logs.
 
         .EXAMPLE
-        Publish-AriaOpsLogsLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123!
-        This example returns the logging configuration of the VMware Aria Operations for Logs in your VCF environment.
+        Publish-AriaOpsLogsLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password]
+        This example returns the logging configuration of the VMware Aria Operations for Logs in a VCF instance.
 
         .PARAMETER server
         The fully qualified domain name of the SDDC Manager instance.
@@ -865,21 +867,22 @@ Export-ModuleMember -Function Publish-AriaOpsLogsLoggingConfig
 Function Request-EsxiLoggingConfig {
     <#
         .SYNOPSIS
-        Publishes the logging configuration for ESXi hosts.
+        Publishes the logging configuration for ESX hosts.
 
         .DESCRIPTION
-        The Publish-EsxiLoggingConfig cmdlet returns logging configuration of all ESXi hosts.
+        The Publish-EsxiLoggingConfig cmdlet returns logging configuration of all ESX hosts.
         The cmdlet connects to the SDDC Manager using the -server, -user, and -pass values:
-        - Validates that network connectivity and authentication is possible to SDDC Manager
-        - Validates that network connectivity and authentication is possible to vCenter Server
+
+        - Validates that network connectivity and authentication is possible to SDDC Manager.
+        - Validates that network connectivity and authentication is possible to vCenter.
 
         .EXAMPLE
-        Request-EsxiLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -domain sfo-m01 -cluster sfo-m01-cl01
-        This example returns the logging configuration of all ESXi hosts in your VCF environment.
+        Request-EsxiLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password] -cluster [cluster_name]
+        This example returns the logging configuration of all ESX hosts in a specified cluster in a VCF instance.
 
         .EXAMPLE
-        Request-EsxiLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -domain sfo-m01 -cluster sfo-m01-cl01
-        This example returns the logging configuration of all ESXi hosts in the provided workload domain.
+        Request-EsxiLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password] -domain [workload_domain_name] -cluster [cluster_name]
+        This example returns the logging configuration of all ESX hosts in a specified workload domain in a VCF instance.
 
         .PARAMETER server
         The fully qualified domain name of the SDDC Manager instance.
@@ -968,17 +971,18 @@ Export-ModuleMember -Function Request-EsxiLoggingConfig
 Function Request-VcenterLoggingConfig {
     <#
         .SYNOPSIS
-        Requests the logging configuration for vCenter Server in a given domain.
+        Requests the logging configuration for vCenter for a specified workload domain.
 
         .DESCRIPTION
-        The Request-VcenterLoggingConfig cmdlet returns logging configuration the vCenter Server in the given domain.
+        The Request-VcenterLoggingConfig cmdlet returns logging configuration the vCenter for a specified workload domain.
         The cmdlet connects to the SDDC Manager using the -server, -user, and -pass values:
-        - Validates that network connectivity and authentication is possible to SDDC Manager
-        - Validates that network connectivity and authentication is possible to vCenter Server
+
+        - Validates that network connectivity and authentication is possible to SDDC Manager.
+        - Validates that network connectivity and authentication is possible to vCenter.
 
         .EXAMPLE
-        Request-VcenterLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -domain sfo-m01
-        This example returns the logging configuration of the vCenter Server in the provided workload domain
+        Request-VcenterLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password] -domain [workload_domain_name]
+        This example returns the logging configuration of the vCenter for a specified workload domain.
 
         .PARAMETER server
         The fully qualified domain name of the SDDC Manager instance.
@@ -1058,7 +1062,7 @@ Function Request-SddcManagerLoggingConfig {
         The Request-SddcManagerLoggingConfig gets the logging configuration from SDDC Manager.
 
         .EXAMPLE
-        Request-SddcManagerLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -localUser vcf -localPass VMw@re1!
+        Request-SddcManagerLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password] -localUser [local_username] -localPass [local_password]
         This example gets the logging configuration from SDDC Manager.
 
         .PARAMETER server
@@ -1152,13 +1156,14 @@ Function Request-NsxLoggingConfig {
         .DESCRIPTION
         The Request-NsxLoggingConfig cmdlet retrieves the logging configuration from NSX Manager and NSX Edge Nodes.
         The cmdlet connects to SDDC Manager using the -server, -user, and -password values.
-        - Validates that network connectivity and authentication is possible to SDDC Manager
-        - Validates that network connectivity and authentication is possible to NSX Manager
-        - Gathers the NSX Edge Node details from NSX Manager cluster
+
+        - Validates that network connectivity and authentication is possible to SDDC Manager.
+        - Validates that network connectivity and authentication is possible to NSX Manager.
+        - Gathers the NSX Edge Node details from NSX Manager.
 
         .EXAMPLE
-        Request-NsxLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -domain sfo-m01
-        This example retrieves the logging configuration from NSX Manager and NSX Edge Nodes for the given workload domain.
+        Request-NsxLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password] -domain [workload_domain_name]
+        This example retrieves the logging configuration from NSX Manager and NSX Edge Nodes for a specified workload domain.
 
         .PARAMETER server
         The fully qualified domain name of the SDDC Manager.
@@ -1273,11 +1278,12 @@ Function Request-AriaOpsLoggingConfig {
         .DESCRIPTION
         The Request-AriaOpsLoggingConfig cmdlet returns logging configuration of VMware Aria Operations.
         The cmdlet connects to the SDDC Manager using the -server, -user, and -pass values:
-        - Validates that network connectivity and authentication is possible to SDDC Manager
-        - Validates that network connectivity and authentication is possible to vCenter Server
+
+        - Validates that network connectivity and authentication is possible to SDDC Manager.
+        - Validates that network connectivity and authentication is possible to vCenter.
 
         .EXAMPLE
-        Request-AriaOpsLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123!
+        Request-AriaOpsLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password]
         This example returns the logging configuration of VMware Aria Operations.
 
         .PARAMETER server
@@ -1350,12 +1356,13 @@ Function Request-AriaAutomationLoggingConfig {
         .DESCRIPTION
         The Request-AriaAutomationLoggingConfig cmdlet returns logging configuration of VMware Aria Automation.
         The cmdlet connects to the SDDC Manager using the -server, -user, and -pass values:
-        - Validates that network connectivity and authentication is possible to SDDC Manager
-        - Validates that network connectivity and authentication is possible to vCenter Server
-        - Validated that network connectivity and authentication is possible to Aria Automation
+
+        - Validates that network connectivity and authentication is possible to SDDC Manager.
+        - Validates that network connectivity and authentication is possible to vCenter.
+        - Validated that network connectivity and authentication is possible to VMware Aria Automation.
 
         .EXAMPLE
-        Request-AriaAutomationLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123!
+        Request-AriaAutomationLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password]
         This example returns the logging configuration of VMware Aria Automation.
 
         .PARAMETER server
@@ -1433,14 +1440,15 @@ Function Request-AriaLifeCycleLoggingConfig {
         Requests the logging configuration for VMware Aria Suite Lifecycle.
 
         .DESCRIPTION
-        The Request-AriaLifeCycleLoggingConfig cmdlet returns logging configuration of VMware Aria LifeCycle
+        The `Request-AriaLifeCycleLoggingConfig` cmdlet returns logging configuration of VMware Aria Lifecycle.
         The cmdlet connects to the SDDC Manager using the -server, -user, and -pass values:
-        - Validates that network connectivity and authentication is possible to SDDC Manager
-        - Validates that network connectivity and authentication is possible to vCenter Server
-        - Validated that network connectivity and authentication is possible to Aria Automation
+
+        - Validates that network connectivity and authentication is possible to SDDC Manager.
+        - Validates that network connectivity and authentication is possible to vCenter.
+        - Validated that network connectivity and authentication is possible to VMware Aria Suite Lifecycle.
 
         .EXAMPLE
-        Request-AriaLifeCycleLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123!
+        Request-AriaLifeCycleLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password]
         This example returns the logging configuration of VMware Aria Suite Lifecycle
 
         .PARAMETER server
@@ -1504,16 +1512,17 @@ Export-ModuleMember -Function Request-AriaLifecycleLoggingConfig
 Function Request-AriaOpsLogsLoggingConfig {
     <#
         .SYNOPSIS
-        Retrieves the logging configuration in VMware Aria Operations for Logs
+        Retrieves the logging configuration in VMware Aria Operations for Logs.
 
         .DESCRIPTION
-        The Request-AriaOpsLogsLoggingConfig cmdlet returns log forwarders and agents configuration from VMware Aria Operations for Logs.
+        The `Request-AriaOpsLogsLoggingConfig` cmdlet returns log forwarders and agents configuration from VMware Aria Operations for Logs.
         The cmdlet connects to the SDDC Manager using the -server, -user, and -pass values:
-        - Validates that network connectivity and authentication is possible to SDDC Manager
-        - Validates that network connectivity and authentication is possible to vCenter Server
+
+        - Validates that network connectivity and authentication is possible to SDDC Manager.
+        - Validates that network connectivity and authentication is possible to vCenter.
 
         .EXAMPLE
-        Request-AriaOpsLogsLoggingConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123!
+        Request-AriaOpsLogsLoggingConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password]
         This example returns the logging configuration of VMware Aria Operations for Logs.
 
         .PARAMETER server
@@ -1656,13 +1665,13 @@ Function Get-vRASyslogConfig {
         The Get-vRASyslogConfig cmdlet returns the Remote Syslog configuration for VMware Aria
         Automation. The cmdlet connects to SDDC Manager using the -server, -user, and -password values and connects to
         the first VMware Aria Automation appliance using the -rootPass value.
-        - Validates that network connectivity and authentication is possible to SDDC Manager
-        - Validates that network connectivity and authentication is possible to Management Domain vCenter Server
-        - Validates that network connectivity is possible to the first VMware Aria Automation appliance
-        - Returns the remote Syslog configuration in VMware Aria Automation
+        - Validates that network connectivity and authentication is possible to SDDC Manager.
+        - Validates that network connectivity and authentication is possible to Management Domain vCenter.
+        - Validates that network connectivity is possible to the first VMware Aria Automation appliance.
+        - Returns the remote Syslog configuration in VMware Aria Automation.
 
         .EXAMPLE
-        Get-vRASyslogConfig -server sfo-vcf01.sfo.rainpole.io -user administrator@vsphere.local -pass VMw@re123! -vraRootPass VMw@re123!
+        Get-vRASyslogConfig -server [sddc_manager_fqdn] -user [admin_username] -pass [admin_password] -vraRootPass [aria_automation_root_password]
         This example returns the VMware Aria Operations for Logs logging configuration on VMware Aria Automation.
 
         .PARAMETER server
@@ -1741,7 +1750,7 @@ Function Get-vRLIAgents {
         Get list of agent on Aria Operations for Logs.
 
         .DESCRIPTION
-        The Get-vRLIAgents cmdlet gets a list of agents
+        The Get-vRLIAgents cmdlet gets a list of agents.
 
         .EXAMPLE
         Get-vRLIAgents
@@ -1763,7 +1772,7 @@ Function Get-NsxMissingLoggingStatus {
         Gets the list of all nodes missing the logging-server configuration status.
 
         .DESCRIPTION
-        The Get-NsxtLoggingStatus cmdlet gets the list of nodes missing logging-server configuration status if all nodes
+        The Get-NsxtLoggingStatus cmdlet gets the list of nodes missing logging-server configuration status if all nodes.
 
         .EXAMPLE
         Get-NsxtLoggingStatus
