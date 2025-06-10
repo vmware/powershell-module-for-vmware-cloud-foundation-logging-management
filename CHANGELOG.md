@@ -1,5 +1,18 @@
 # Release History
 
+## v1.0.2
+
+> Release Date: 2025-06-09
+
+Documentation:
+
+- Updated documentation to use example context. (#24,#25)
+
+Chore:
+
+- Updated VMware.PowerCLI module dependency from v13.2.1 to v13.3.0. (#22)
+- Updated PowerValidatedSolutions module dependency from v2.11.0 to v2.12.1. (#22)
+
 ## v1.0.1
 
 > Release Date: 2024-07-24

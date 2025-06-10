@@ -11,7 +11,7 @@
     RootModule        = '.\VMware.CloudFoundation.LoggingManagement.psm1'
 
     # Version number of this module.
-    ModuleVersion     = '1.1.0.1001'
+    ModuleVersion     = '1.1.0.1002'
 
     # ID used to uniquely identify this module
     GUID              = 'ab2616c1-fa09-477f-a5d0-22b512b5622a'
