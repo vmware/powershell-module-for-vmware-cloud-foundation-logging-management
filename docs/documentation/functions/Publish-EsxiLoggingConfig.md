@@ -114,7 +114,7 @@ Accept wildcard characters: False
 
 ### -workloadDomain
 
-Switch to publish the logging configuration for a specific workload domain.
+Switch to publish the logging configuration for a specified workload domain.
 
 ```yaml
 Type: String
