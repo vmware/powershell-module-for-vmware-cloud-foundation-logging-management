@@ -5,9 +5,9 @@
 # PowerShell Module for VMware Cloud Foundation Logging Management
 
 [![Documentation](https://img.shields.io/badge/Read-Documentation-blue?logo=readthedocs)][docs-module]
-[![PS Version](https://img.shields.io/powershellgallery/v/VMware.CloudFoundation.PowerManagement?label=Version)](https://www.powershellgallery.com/packages/VMware.CloudFoundation.PowerManagement)
-[![PS Downloads](https://img.shields.io/powershellgallery/dt/VMware.CloudFoundation.PowerManagement?label=Downloads)](https://www.powershellgallery.com/packages/VMware.CloudFoundation.PowerManagement)
-[![GitHub Clones](https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=count&url=https://gist.githubusercontent.com/nathanthaler/5743b25f01a8ef1873793d18e58862b1/raw/clone.json&logo=github)](https://gist.githubusercontent.com/nathanthaler/5743b25f01a8ef1873793d18e58862b1/raw/clone.json)
+[![PS Version](https://img.shields.io/powershellgallery/v/VMware.CloudFoundation.LoggingManagement?label=Version)](https://www.powershellgallery.com/packages/VMware.CloudFoundation.LoggingManagement)
+[![PS Downloads](https://img.shields.io/powershellgallery/dt/VMware.CloudFoundation.LoggingManagement?label=Downloads)](https://www.powershellgallery.com/packages/VMware.CloudFoundation.LoggingManagement)
+[![GitHub Clones](https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=count&url=https://gist.githubusercontent.com/nathanthaler/cf634f2d773118f9124d87c604281a3d/raw/clone.json&logo=github)](https://gist.githubusercontent.com/nathanthaler/cf634f2d773118f9124d87c604281a3d/raw/clone.json)
 [![Changelog](https://img.shields.io/badge/Changelog-Read-blue)](CHANGELOG.md)
 
 ## Overview
