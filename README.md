@@ -10,7 +10,11 @@
 [![GitHub Clones](https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=count&url=https://gist.githubusercontent.com/nathanthaler/cf634f2d773118f9124d87c604281a3d/raw/clone.json&logo=github)](https://gist.githubusercontent.com/nathanthaler/cf634f2d773118f9124d87c604281a3d/raw/clone.json)
 [![Changelog](https://img.shields.io/badge/Changelog-Read-blue)](CHANGELOG.md)
 
-## Overview
+## Project Archived
+
+`VMware.CloudFoundation.LoggingManagement` has been archived and no further updates will be made.
+
+## Historical Overview
 
 `VMware.CloudFoundation.LoggingManagement` is a PowerShell module that supports the ability to
 generate HTML logging configuration report and manage logging configurations across your VMware
